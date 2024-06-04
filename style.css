@@ -57,13 +57,34 @@ section {
     font-size: 1.5rem;
     color: var(--text-color);
     margin-left: 4rem;
-    font-weight: 700;
+    font-weight: 700;   
+    position: relative;
 }
 
 .navbar a:hover,
-.navbar a:active{
+.navbar a:active
+{
     color: var(--main-color);
 }
+
+.navbar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: 0 0 -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+
+.navbar a:hover::after,
+.navbar a:active::after {
+    width: 100%;
+}
+
 
 #menu-icon{
     font-size: 3.6rem;
@@ -76,6 +97,7 @@ section {
     justify-content: space-between;
     align-items: center; 
 }
+
 
 .home-content{
     font-size: 3.2rem;
