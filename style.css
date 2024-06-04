@@ -214,6 +214,27 @@ span{
     background: var(--snd-bf-color);
 }
 
+.about .fa-arrow-down{
+    display: flex;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 10px;
+    animation: ArrowDown 1s ease-in-out infinite;
+    color: var(--main-color);
+}
+
+@keyframes ArrowDown {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(1rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .about-img img{
     width: 35vw;
 }
@@ -346,7 +367,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; 
     text-align: center;
     padding: 0 4rem;
     transform: translateY(100%);
@@ -590,3 +611,58 @@ span{
         width: 100%;
     }
 }
+
+/* My Hobby */
+.hb-heading{
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.hobbies-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hobbies-container img{
+    width: 10vw;
+}
+
+.hobbies-container .hobbies-box{
+    flex: 1 1 30rem;
+    background: var(--snd-bf-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--main-color);
+    transition: .5s ease;
+}
+
+.hobbies-container .hobbies-box:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+    transform: scale(1.02);
+}
+
+.hobbies-container .hobbies-box i{
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.hobbies-box h3{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.hobbies-box p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin: 1rem 0 3rem;
+}
+
+/* music */
+.hb-music{
+    background: var(--snd-bf-color);
+}
+

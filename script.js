@@ -46,7 +46,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const typed = new Typed('.multiple-text', {
         strings: ['Frontend Developer', 'Web Designer', 'Web Developer'],
         typeSpeed: 70,
-        backSpeed: 70,
+        backSpeed: 60,
+        backDelay: 1500,
+        loop: true,
+    });
+    const typeSpeed = new Typed('.multiple-name', {
+        strings: ['Sutie', 'Sutie Cutie', 'Sutie Xù Xì'],
+        typeSpeed: 70,
+        backSpeed: 60,
         backDelay: 1000,
         loop: true,
     });
