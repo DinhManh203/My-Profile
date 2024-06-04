@@ -131,6 +131,19 @@ span{
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: .5s ease;
+    animation: floatSocial 2.5s ease-in-out infinite;
+}
+
+@keyframes floatSocial {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(0.5rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 
 .social-media a:hover{
