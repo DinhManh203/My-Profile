@@ -6,14 +6,15 @@
     <!-- Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.playerjs.com/player.min.css">
+
     <title>Sutie Xu Xi</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">Sutie Xu Xi</a>
+    <!-- Header --><header class="header">
+    <!-- <a href="#" class="logo">Sutie Xu Xi</a> -->
         <nav class="navbar">
-            <a href="./index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+            <a id="home-link" href="./index.html"><i class="fa-solid fa-house" style="color: #59B2F4"></i> <span id="home-text">Back to Home</span></a>
         </nav>
     </header>
 
@@ -48,15 +49,43 @@
 
     </section>
 
-    <!-- Music Section -->
     <section class="hb-music" id="hb-music">
         <h2 class="hb-heading">My Favorites <span>Musics</span></h2>
+        <div class="music-container">
+    
+            <!-- Music Box -->
+            <div class="music-box">
+                <div class="music-player" id="audio-player"></div>
+            </div>
+    
+        </div>
     </section>
-
-    <!-- Show Section -->
+    
+    <!-- Shows Section -->
     <section class="hb-show" id="hb-show">
         <h2 class="hb-heading">My Favorites <span>Shows</span></h2>
+        <div class="video-container">
+            <div class="video">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
     </section>
+    
 
 
 
@@ -73,6 +102,85 @@
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>  
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.playerjs.com/player.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/playerjs.js"></script>
+
+    <script>
+        const homeLink = document.getElementById('home-link');
+        const homeIcon = homeLink.querySelector('i');
+        const homeText = document.getElementById('home-text');
+    
+        homeLink.addEventListener('mouseover', function() {
+            homeIcon.classList.remove('fa-house');
+            homeIcon.classList.add('fa-arrow-left');
+            homeText.textContent = 'Return Now';
+        });
+    
+        homeLink.addEventListener('mouseout', function() {
+            homeIcon.classList.remove('fa-arrow-left');
+            homeIcon.classList.add('fa-house');
+            homeText.textContent = 'Back to Home';
+        });
+
+    </script>
+
+    <script>
+        const player = new Playerjs({
+            id: "audio-player",
+            file: [
+                {
+                    "file": "./audio/Echo.mp3",
+                    "title": "ECHO【Gumi English】Crusher-P: The Living Tombstone Remix",
+                    "poster": "./images/poster_echo.jpg",
+                },
+                {
+                    file: "./audio/Señorita.mp3",
+                    title: "Shawn Mendes, Camila Cabello - Señorita",
+                    poster: "./images/poster_señorita.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                {
+                    file: "./audio/WeDon'tTalkAnymore.mp3",
+                    title: "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)",
+                    poster: "./images/donttalk.jpg",
+                },
+                
+            ],
+            autoplay: false,
+            volume: 0.5,
+            controls: true,
+        });
+    </script>
+    
 </body>
 </html>
